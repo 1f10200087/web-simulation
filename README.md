@@ -1,3 +1,2 @@
 # web-simulation
-3-year team project
-やっほーがんばろう
+3-year team project　やほりん
