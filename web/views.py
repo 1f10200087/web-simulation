@@ -6,4 +6,4 @@ def index(request):
 	return render(request, 'index.html')
 
 def sns(request):
-	return render(request, 'sns_troble.index')
+	return render(request, 'sns.html')

@@ -19,6 +19,6 @@ from web import views as web_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('web/', web_views.index),
-    path('web/sns_troble', web_views.sns),
+    path('web/', web_views.index, name="index"),
+    path('web/sns', web_views.sns, name="sns"),
 ]
