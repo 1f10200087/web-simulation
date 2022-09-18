@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="urf-8">
+        <title>test</title>
+        <script src="{% static 'js/script.js' %}"></script>
+    </head>
+    <body>
+        <h1>Test</h1>
+        <div id="comprehension_check">
+            <ol>
+            {% for q in ques %}
+                <div class="questions">
+                    <div class="question">
+                        <li>{{ q.1 }}</li>
+                    </div>
+                    <div class="option" onclick="answer_check('{{ q.3 }}', event)">
+                        {% for o in q.2 %}
+                        <button id="answer-{{ forloop.parentloop.counter }}-{{ forloop.counter }}" value="{{ o }}">
+                            {{ o }}
+                        </button>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+            </ol>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="urf-8">
+        <title>test</title>
+        <script src="{% static 'js/script.js' %}"></script>
+    </head>
+    <body>
+        <h1>Test</h1>
+        <div id="comprehension_check">
+            <form id="form" method="POST">
+            {% csrf_token %}
+            <ol>
+            {% for q in ques %}
+                <div class="questions">
+                    <div class="question">
+                        <li>{{ q.1 }}</li>
+                    </div>
+                    <div class="option">
+                        {% for o in q.2 %}
+                        <input type="submit" name="answer-{{ forloop.parentloop.counter }}-{{ forloop.counter }}" value="{{ o }}" />
+                        {% endfor %}
+                    </div>
+                    <div class="judge">
+                        {% if q.4 == 1 %}
+                            <p>Correct!</p>
+                        {% elif q.4 == 0 %}
+                            <p>wrong...</p>
+                        {% else %}
+                            <p>not answer.</p>
+                        {% endif %}
+                    </div>
+                    <script>
+                        
+                    </script>
+                </div>
+            {% endfor %}
+            </ol>
+            </form>
+        </div>
+    </body>
+</html>

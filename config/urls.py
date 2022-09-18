@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('web/', web_views.index, name="index"),
     path('web/sns', web_views.sns, name="sns"),
+    path('quiz1', web_views.quiz1, name="quiz1"),
+    path('quiz2', web_views.quiz2, name="quiz2"),
 ]
