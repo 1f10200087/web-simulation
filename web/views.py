@@ -11,6 +11,15 @@ def index(request):
 def sns(request):
 	return render(request, 'sns.html')
 
+def charge(request):
+	return render(request, 'charge.html')
+
+def fraud(request):
+	return render(request, 'fraud.html')
+
+def security(request):
+	return render(request, 'security.html')
+
 def get_quiz():
 	test_file = open('web/ques/ques-utf8.csv', encoding="utf-8")
 	test_data = csv.reader(test_file)

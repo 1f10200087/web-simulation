@@ -21,6 +21,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('web/', web_views.index, name="index"),
     path('web/sns', web_views.sns, name="sns"),
+    path('web/charge', web_views.charge, name="charge"),
+    path('web/fraud', web_views.fraud, name="fraud"),
+    path('web/security', web_views.security, name="security"),
     path('quiz1', web_views.quiz1, name="quiz1"),
     path('quiz2', web_views.quiz2, name="quiz2"),
 ]
