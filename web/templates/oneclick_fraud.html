@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ワンクリック詐欺ページ</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+</head>
+<body>
+    <h1>100万円当選申し込みページ</h1>
+    <script>
+        window.addEventListener('load', function() {
+            alert("ワンクリック詐欺");
+        });
+    </script>
+</body>
+</html>

@@ -17,6 +17,9 @@ def charge(request):
 def fraud(request):
 	return render(request, 'fraud.html')
 
+def oneclick_fraud(request):
+	return render(request, 'oneclick_fraud.html')
+
 def security(request):
 	return render(request, 'security.html')
 
