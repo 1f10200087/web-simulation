@@ -7,19 +7,40 @@
     <title>メインページ</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <script src="https://kit.fontawesome.com/c0d1773d8e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 </head>
 <body>
-    <header>
-    <a href="{% url 'index' %}">ロゴを入れる？</a>
-    </header>
+    <div class="sidebar">
+        <header>
+            <a href="{% url 'index' %}">おうちでがっこう</a>
+        </header>
+        <ul>
+            <li>
+                <a href="#"><i class="fa-sharp fa-solid fa-circle-play"></i>SNSのこと</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-sharp fa-solid fa-circle-play"></i><ruby>課<rt>か</rt>金<rt>きん</rt></ruby>のこと</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-sharp fa-solid fa-circle-play"></i><ruby>詐<rt>さ</rt>欺<rt>ぎ</rt></ruby>のこと</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-sharp fa-solid fa-circle-play"></i>セキュリティのこと</a>
+            </li>
+        </ul>
+    </div>
     <hr>
     <a href="{% url 'sns' %}">SNSトラブル</a>
     <a href="{% url 'charge' %}">高額課金ページ</a>
     <a href="{% url 'fraud' %}">詐欺ページ</a>
     <a href="{% url 'security' %}">セキュリティページ</a>
     <hr>
+
+    <p>Primary</p>
+
     <footer>
-        <p>&copy; ICTリテラシー教室</p>
+        <p>&copy; おうちでがっこう</p>
     </footer>
 </body>
 </html>
