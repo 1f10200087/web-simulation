@@ -14,6 +14,9 @@ ul {
     font-size: 170%;
     width: 300px;
     background-color: moccasin;
-    height: 1000px
+    height: 1000px;
   }
   
+.menu{
+    border-bottom: dotted 3px rgb(186, 184, 184);
+}
