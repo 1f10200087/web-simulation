@@ -11,7 +11,9 @@ ul {
 }
 
 .sidebar {
+    font-size: 170%;
     width: 300px;
     background-color: moccasin;
+    height: 1000px
   }
   
