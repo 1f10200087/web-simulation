@@ -9,3 +9,9 @@
 ul {
     padding: 0;
 }
+
+.sidebar {
+    width: 300px;
+    background-color: moccasin;
+  }
+  
