@@ -11,24 +11,25 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 </head>
 <body>
-    <div class="sidebar">
-        <header>
-            <a href="{% url 'index' %}" style="text-decoration:none;">おうちでがっこう</a>
-        </header>
-        <ul>
-            <li>
-                <div class = "menu"><a href="#" style="text-decoration:none;"><i class="fa-sharp fa-solid fa-circle-play"></i>SNSのこと</a></div>
-            </li>
-            <li>
-                <div class = "menu"><a href="#" style="text-decoration:none;"><i class="fa-sharp fa-solid fa-circle-play"></i><ruby>課<rt>か</rt>金<rt>きん</rt></ruby>のこと</a></div>
-            </li>
-            <li>
-                <div class = "menu"><a href="#" style="text-decoration:none;"><i class="fa-sharp fa-solid fa-circle-play"></i><ruby>詐<rt>さ</rt>欺<rt>ぎ</rt></ruby>のこと</a></div>
-            </li>
-            <li>
-                <div class = "menu"><a href="#" style="text-decoration:none;"><i class="fa-sharp fa-solid fa-circle-play"></i>セキュリティのこと</a></div>
-            </li>
+    <div class="header"></div>
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+    <div id="sidebarMenu">
+        <ul class="sidebarMenuInner">
+        <li><a href="#" style="text-decoration:none;"><a href="https://vanila.io" target="_blank"><i class="fa-sharp fa-solid fa-circle-play"></i>　SNSのこと</a></a></li>
+        <li><a href="https://instagram.com/plavookac" target="_blank">課金のこと</a></li>
+        <li><a href="https://twitter.com/plavookac" target="_blank">詐欺のこと</a></li>
+        <li><a href="https://www.youtube.com/channel/UCDfZM0IK6RBgud8HYGFXAJg" target="_blank">セキュリティのこと</a></li>
         </ul>
+    </div>
+    <div id='center' class="main center">
+        <div class="mainInner">
+        <div>contens</div>
+        </div>
     </div>
     <hr>
     <a href="{% url 'sns' %}">SNSトラブル</a>
