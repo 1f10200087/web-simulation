@@ -20,10 +20,10 @@
     </label>
     <div id="sidebarMenu">
         <ul class="sidebarMenuInner">
-        <li><a href="#" style="text-decoration:none;"><a href="https://vanila.io" target="_blank"><i class="fa-sharp fa-solid fa-circle-play"></i>　SNSのこと</a></a></li>
-        <li><a href="https://instagram.com/plavookac" target="_blank">課金のこと</a></li>
-        <li><a href="https://twitter.com/plavookac" target="_blank">詐欺のこと</a></li>
-        <li><a href="https://www.youtube.com/channel/UCDfZM0IK6RBgud8HYGFXAJg" target="_blank">セキュリティのこと</a></li>
+        <li><a href="#" style="text-decoration:none;"><a href="{% url 'sns' %}" target="_blank"><i class="fa-sharp fa-solid fa-circle-play"></i>　SNSのこと</a></a></li>
+        <li><a href="{% url 'charge' %}" target="_blank">課金のこと</a></li>
+        <li><a href="{% url 'fraud' %}" target="_blank">詐欺のこと</a></li>
+        <li><a href="{% url 'security' %}" target="_blank">セキュリティのこと</a></li>
         </ul>
     </div>
     <div id='center' class="main center">
