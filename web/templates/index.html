@@ -21,7 +21,7 @@
     </label>
     <div id="sidebarMenu">
         <ul class="sidebarMenuInner">
-        <li><a href="#" style="text-decoration:none;"><a href="{% url 'sns' %}" target="_blank"><i class="fa-sharp fa-solid fa-circle-play"></i>　SNSのこと</a></a></li>
+        <li><a href="{% url 'sns' %}" style="text-decoration:none;"><a href="{% url 'sns' %}" target="_blank"><i class="fa-sharp fa-solid fa-circle-play"></i>　SNSのこと</a></a></li>
         <li><a href="{% url 'charge' %}" target="_blank">課金のこと</a></li>
         <li><a href="{% url 'fraud' %}" target="_blank">詐欺のこと</a></li>
         <li><a href="{% url 'security' %}" target="_blank">セキュリティのこと</a></li>
@@ -34,15 +34,12 @@
     </div>
     <img src="{% static 'image/IMG_4956.jpg' %}" alt="a">
 
-
     <hr>
     <a href="{% url 'sns' %}">SNSトラブル</a>
     <a href="{% url 'charge' %}">高額課金ページ</a>
     <a href="{% url 'fraud' %}">詐欺ページ</a>
     <a href="{% url 'security' %}">セキュリティページ</a>
     <hr>
-
-    <p>Primary</p>
 
     <footer>
         <p>&copy; おうちでがっこう</p>
