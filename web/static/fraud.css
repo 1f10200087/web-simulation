@@ -1,18 +1,26 @@
 body {
+    margin: 50px;
     background-color: black;
 }
 
 h1 {
     color: red;
     text-align: center;
-    position: relative;
 }
 
 p {
     color: white;
-    position: absolute;
-    top: 100px;
-    left: 100px;
-    right: 100px;
+}
 
+span {
+    color: red;
+}
+
+h2 {
+    color:white;
+}
+
+hr {
+    color:white;
+    margin: 20px;
 }
