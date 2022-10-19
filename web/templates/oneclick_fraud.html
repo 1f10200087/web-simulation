@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
     <link rel="stylesheet" href="{% static 'fraud.css' %}">
     <script type="text/javascript">
-        /*window.addEventListener('load', function() {
-            alert("ワンクリック詐欺");
-        });*/
         function frund_alert() {
             window.alert('登録が完了しました。')
         }
@@ -29,14 +26,32 @@
         </div>
     </section>
     <section>
-        <div class="container">
+        <div class="container" id = "test">
         <h2>お振込先</h2>
-        <table>
-            
+        <table border="1" style="border-color: white">
+            <tr>
+                <th>銀行名</th>
+                <td>おうち銀行</td>
+            </tr>
+            <tr>
+                <th>支店名</th>
+                <td>がっこう支店</td>
+            </tr>
+            <tr>
+                <th>口座名義</th>
+                <td>サギ タイケン</td>
+            </tr>
+            <tr>
+                <th>口座番号</th>
+                <td>普) 123456</td>
+            </tr>
+            <tr>
+                <th>振込金額</th>
+                <td>45,000円</td>
+            </tr>
         </table>
         </div>
     </section>
-    <hr>
     <footer>
         <div class="container">
         <p>&copy; おうちでがっこう</p>

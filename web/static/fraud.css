@@ -24,3 +24,15 @@ hr {
     color:white;
     margin: 20px;
 }
+
+th {
+    color:white;
+}
+
+td {
+    color:white;
+}
+
+#test {
+    border-bottom: 1px solid white;
+}
