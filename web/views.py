@@ -23,6 +23,12 @@ def oneclick_fraud(request):
 def security(request):
 	return render(request, 'security.html')
 
+def security_exp(request):
+	return render(request, 'securty_exp.html')
+
+def test(request):
+	return render(request, 'test.html')
+
 def get_quiz():
 	test_file = open('web/ques/ques-utf8.csv', encoding="utf-8")
 	test_data = csv.reader(test_file)
