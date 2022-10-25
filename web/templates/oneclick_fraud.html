@@ -7,28 +7,78 @@
     <title>ワンクリック詐欺ページ</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
     <link rel="stylesheet" href="{% static 'fraud.css' %}">
-    <script type="text/javascript">
-        function frund_alert() {
-            window.alert('登録が完了しました。')
-        }
-    </script>
 </head>
-<body onload="frund_alert()">
+<body>
     <h1>ご登録ありがとうございます！</h1>
     <section>
         <div class="container">
+        <h2>支払期限まで</h2>
         <p>お客様の会員登録が完了いたしました。お客様の個人情報を取得させて頂き、以下の通り登録が正式に完了いたしました。<b><span>登録料45,000円を、至急下記口座までお振込み下さいます様、お願い致します。</span></b>尚、1週間経ってもお振込みが行われない場合、下記プロバイダへ問い合わせ、お客様のご自宅、もしくはお勤め先へご請求をさせて頂く場合もございます。予めご了承下さいませ。</p>
         </div>
     </section>
     <section>
         <div class="container">
-        <h2>あなたのアクセス情報</h2>
+        <h3>あなたのアクセス情報</h3>
+        <table border="1" class="w-75">
+            <tr>
+                <th>ご登録日</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>あなたのIPアドレス</th>
+                <td>39.111.241.243</td>
+            </tr>
+            <tr>
+                <th>あなたのリモートホスト</th>
+                <td>(none)</td>
+            </tr>
+            <tr>
+                <th>あなたのアクセス経路</th>
+                <td>(none)</td>
+            </tr>
+            <tr>
+                <th>現在ご利用のブラウザ</th>
+                <td>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36</td>
+            </tr>
+            <tr>
+                <th>アクセスサーバ</th>
+                <td>ouchide-gakko.com</td>
+            </tr>
+            <tr>
+                <th>サーバソフトウェア</th>
+                <td>Apache</td>
+            </tr>
+            <tr>
+                <th>リモートポート</th>
+                <td>39260</td>
+            </tr>
+            <tr>
+                <th>CHARSET</th>
+                <td>(none)</td>
+            </tr>
+            <tr>
+                <th>Accept Language</th>
+                <td>ja,en-US;q=0.9,en;q=0.8</td>
+            </tr>
+            <tr>
+                <th>http connection</th>
+                <td>(none)</td>
+            </tr>
+            <tr>
+                <th>Document root</th>
+                <td>/home/users/2/kentaro/web/kentaro-shimizu</td>
+            </tr>
+            <tr>
+                <th>http accept</th>
+                <td>text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</td>
+            </tr>
+        </table>
         </div>
     </section>
     <section>
         <div class="container" id = "test">
-        <h2>お振込先</h2>
-        <table border="1" style="border-color: white">
+        <h3>お振込先</h3>
+        <table border="1" class="w-75">
             <tr>
                 <th>銀行名</th>
                 <td>おうち銀行</td>
@@ -50,6 +100,7 @@
                 <td>45,000円</td>
             </tr>
         </table>
+        <p>※お支払い手数料に関しましては、お客様のご負担となります。</p>
         </div>
     </section>
     <footer>
@@ -57,5 +108,6 @@
         <p>&copy; おうちでがっこう</p>
         </div>
     </footer>
+    <script type="text/javascript" src="{% static 'fraud.js' %}"></script>
 </body>
 </html>

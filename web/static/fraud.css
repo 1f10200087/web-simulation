@@ -20,6 +20,10 @@ h2 {
     color:white;
 }
 
+h3 {
+    color:white;
+}
+
 hr {
     color:white;
     margin: 20px;
@@ -27,12 +31,21 @@ hr {
 
 th {
     color:white;
+    border: 1px #C8C8C8 solid;
 }
 
 td {
     color:white;
+    border: 1px #C8C8C8 solid;
 }
 
 #test {
     border-bottom: 1px solid white;
+}
+
+table {
+    border-color: white;
+    width:85vw;
+    table-layout: fixed;
+    word-wrap: break-word;
 }
