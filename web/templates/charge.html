@@ -1,22 +1,25 @@
+{% extends 'theme.html' %}
+
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高額課金ページ</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
-</head>
-<body>
-    <header>
-    <a href="{% url 'index' %}">ロゴを入れる？</a>
-    </header>
-    <hr>
-    <!--スライドや問題を入れる-->
-    <hr>
-    <footer>
-        <p>&copy; ICTリテラシー教室</p>
-    </footer>
-</body>
-</html>
+
+{% block title %}高額課金ページ{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+{% endblock %}
+
+{% block contents %}
+<h2>contents</h2>
+<div class="g-slide">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ6VnnFAcmFfzIvy_lXFrKGPDMr3xuzS3mDiRcZDmM9cVmR7xE0m3vNMBkUgpp46czRR42UfqvHFq98/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+{% endblock %}
+
+{% block simulation %}
+<h2>simulation</h2>
+{% endblock %}
+
+{% block quiz %}
+<h2>quiz</h2>
+{% endblock %}  
