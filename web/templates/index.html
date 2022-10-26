@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>メインページ</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'test.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
     <script src="https://kit.fontawesome.com/c0d1773d8e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
@@ -30,15 +31,23 @@
         <li><a href="{% url 'security' %}" target="_self">セキュリティのこと</a></li>
         </ul>
     </div>
+    <div class="button1">
+    <a href="" class="btn btn-malformation">SNSのこと</a>
+    <a href="" class="btn btn-malformation">高額課金のこと</a></div>
+    <div class="button2">
+    <a href="" class="btn btn-malformation">詐欺のこと</a>
+    <a href="" class="btn btn-malformation">セキュリティのこと</a>
+    </div>
     {% endblock %}
 
     <div id="center" class="main center">
         <div class="mainInner">
-        <div>contents</div>
         </div>
     </div>
 
-    <div class="border-radius">border-radius: 30px;</div>
+    
+
+    
 
     <hr>
     <a href="{% url 'sns' %}">SNSトラブル</a>
