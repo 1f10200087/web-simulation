@@ -12,17 +12,25 @@
     <h1>ご登録ありがとうございます！</h1>
     <section>
         <div class="container">
-        <h2>支払期限まで</h2>
+        <h2>支払期限まであと</h2>
+        <div id="countdownArea" class="countdown">
+            <span id="countdown-day"></span>日
+            <span id="countdown-hour"></span>時間
+            <span id="countdown-min"></span>分
+            <span id="countdown-sec"></span>秒
+        </div>
+        <br>
         <p>お客様の会員登録が完了いたしました。お客様の個人情報を取得させて頂き、以下の通り登録が正式に完了いたしました。<b><span>登録料45,000円を、至急下記口座までお振込み下さいます様、お願い致します。</span></b>尚、1週間経ってもお振込みが行われない場合、下記プロバイダへ問い合わせ、お客様のご自宅、もしくはお勤め先へご請求をさせて頂く場合もございます。予めご了承下さいませ。</p>
         </div>
     </section>
+    <br>
     <section>
         <div class="container">
         <h3>あなたのアクセス情報</h3>
         <table border="1" class="w-75">
             <tr>
                 <th>ご登録日</th>
-                <td></td>
+                <td id = "DateTimeDisp" onload="LoadProc();"></td>
             </tr>
             <tr>
                 <th>あなたのIPアドレス</th>
@@ -75,6 +83,7 @@
         </table>
         </div>
     </section>
+    <br>
     <section>
         <div class="container" id = "test">
         <h3>お振込先</h3>

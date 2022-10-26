@@ -49,3 +49,7 @@ table {
     table-layout: fixed;
     word-wrap: break-word;
 }
+
+#countdownArea {
+    color:white;
+}
