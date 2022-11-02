@@ -32,11 +32,11 @@
         </ul>
     </div>
     <div class="button1">
-    <a href="" class="btn btn-malformation">SNSのこと</a>
-    <a href="" class="btn btn-malformation">高額課金のこと</a></div>
+    <a href="{% url 'sns' %}" class="btn btn-malformation">SNSのこと</a>
+    <a href="{% url 'charge' %}" class="btn btn-malformation">高額課金のこと</a></div>
     <div class="button2">
-    <a href="" class="btn btn-malformation">詐欺のこと</a>
-    <a href="" class="btn btn-malformation">セキュリティのこと</a>
+    <a href="{% url 'fraud' %}" class="btn btn-malformation">詐欺のこと</a>
+    <a href="{% url 'security' %}" class="btn btn-malformation">セキュリティのこと</a>
     </div>
     {% endblock %}
 

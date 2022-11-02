@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>セキュリティ疑似体験ページ</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+</head>
+<body>
+    <h2>ランサムウェア</h2>
+    <div class="timer">
+        <p class="time"><span id="min"></span> :</p>
+        <p class="time"><span id="sec"></span> :</p>
+        <p class="time"><span id="miri"></span> :</p>
+    </div>
+
+    <p id="timer"></p>
+
+    <p>１０分後にあなたの大切なファイル(写真など)がすべて破棄されます。<br></p>
+    <p>時間内に振り込んでください。<br>
+        <h3>何が起きたの？</h3>
+        <p>重要なファイルは暗号化されています<br>
+           文書、写真、ビデオ、データベース、およびその他のファイルの多くは、暗号化されているためアクセス出来なくなりました。<br>
+           ファイルを回復する方法を探していますが、時間がありません。<br>
+           また、誰も私たちの解読サービス無しではあなたのファイルを回復することができません。 
+        </p>
+        <h3>どうすればいいの？
+        </h3>
+        <p>
+            あなたのファイルを安全かつ簡単に回復することができます。<br>
+            もし、あなたがファイルを解読させたいなら、時間内にお金を払わなければいけません。<br>
+            また、時間内に支払いがなければ、永遠にあなたのファイルが回復することが出来ません。
+        </p>
+        <h3>どうやって払うの？</h3>
+        <p>電子マネーで支払う。
+        <p>Bit Coin : <input type="text" name="money">＄</p>    
+        <button type="submit" name="pay">支払う</button>
+    </p>
+    <script>
+
+        const min = document.getElementById("min");
+        const sec = document.getElementById("sec");
+        const miri = document.getElementById("miri");
+
+        var countDownDate = new Date().getTime() + (1000 * 60 * 10);
+        console.log(countDownDate);
+
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+
+            var diff = countDownDate - now;
+            var Min = Math.floor(diff / 1000 / 60) % 60;
+            var Sec = Math.floor(diff / 1000) % 60;
+            var Miri = Math.floor(diff % 100);
+
+            min.innerHTML = Min < 10 ? '0' + Min : Min;
+            sec.innerHTML = Sec < 10 ? '0' + Sec : Sec;
+            miri.innerHTML = Miri <10 ? '0' + Miri : Miri;
+
+            document.getElementById("timer").innerHTML = Min + " <span>分</span> " + Sec + " <span>秒</span>" + Miri + " <span>ミリ秒</span>";
+            if (diff < 0) {
+                document.getElementById("timer").innerHTML = "時間切れ";
+            }
+        })
+    </script>
+</body>
+</html>

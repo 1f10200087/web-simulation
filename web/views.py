@@ -24,7 +24,7 @@ def security(request):
 	return render(request, 'security.html')
 
 def security_exp(request):
-	return render(request, 'securty_exp.html')
+	return render(request, 'security_exp.html')
 
 def test(request):
 	return render(request, 'test.html')
