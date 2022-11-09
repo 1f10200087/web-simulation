@@ -122,3 +122,4 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/image/'
 MEDIA_ROOT = BASE_DIR / "image"
+
