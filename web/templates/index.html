@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メインページ</title>
+    <title>ホームページ</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <link rel="stylesheet" href="{% static 'css/test.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
@@ -25,10 +25,10 @@
     </label>
     <div id="sidebarMenu">
         <ul class="sidebarMenuInner">
-        <li><a href="#" style="text-decoration:none;"><a href="{% url 'sns' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　SNSのこと</a></a></li>
-        <li><a href="{% url 'charge' %}" target="_self">課金のこと</a></li>
-        <li><a href="{% url 'fraud' %}" target="_self">詐欺のこと</a></li>
-        <li><a href="{% url 'security' %}" target="_self">セキュリティのこと</a></li>
+        <li><a href="{% url 'sns' %}" style="text-decoration:none;"><a href="{% url 'sns' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　SNSのこと</a></a></li>
+        <li><a href="{% url 'charge' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　課金のこと</a></li>
+        <li><a href="{% url 'fraud' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　詐欺のこと</a></li>
+        <li><a href="{% url 'security' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　セキュリティのこと</a></li>
         </ul>
     </div>
     <div id="titleimage">
