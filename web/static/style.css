@@ -174,8 +174,3 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     background: repeating-linear-gradient( -45deg, #ffc107, #ffc107 10px, #ffe9a7 10px, #ffe9a7 50px );
   }
 
-.aligncenter{
-    display: block;
-    margin-left: auto;
-    margin-top: auto;
-}
