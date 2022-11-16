@@ -32,25 +32,35 @@ def test(request):
 	return render(request, 'test.html')
 
 def Diagnosis_charge(request):
-	return render(request, 'Diagnosis_charge.html')
+	form = forms.SurveyForm
+	answs = [0, 0, 0, 0, 0]
+	context = {
+		'form' : form,
+	}
+	if request.method == 'POST':
+		form = forms.SurveyForm(request.POST)
+		
+		if form.is_valid():
+			answs[0] = request.POST['ques1']
+			answs[1] = request.POST['ques2']
+			answs[2] = request.POST['ques3']
+			answs[3] = request.POST['ques4']
+			answs[4] = request.POST['ques5']
+			result = calc_DegreeCharge(answs)
+		print(answs, result)
+		context = {
+			'form' : form,
+			'result' : str(result)
+		}
+	return render(request, 'Diagnosis_charge.html', context)
 
-class SurveyFormView(TemplateView):
+def calc_DegreeCharge(lst):
+	res = 0
+	for a in lst:
+		if a == "1":
+			res += 1
+	return res / 5 * 100
 
-	def __init__(self):
-		self.params = {"Message":"課金能力チェック！❤",
-						"form":forms.SurveyForm(),
-						}
-	
-	def get(self, request):
-		return render(request, "Diagnosis_charge.html", context=self.params)
-
-	def post(self, request):
-		if request.method == "POST":
-			self.params["form"] = forms.SurveyForm(request.POST)
-
-			if self.params["form"].is_valid():
-				self.params["Message"] = "ありがとう。"
-		return render(request, "Diagnosis_charge.html", context=self.params)
 
 def get_quiz():
 	test_file = open('web/ques/ques-utf8.csv', encoding="utf-8")
