@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from . import forms
+from django.views.generic import TemplateView
 
 import csv
 import json
@@ -28,6 +30,27 @@ def security_exp(request):
 
 def test(request):
 	return render(request, 'test.html')
+
+def Diagnosis_charge(request):
+	return render(request, 'Diagnosis_charge.html')
+
+class SurveyFormView(TemplateView):
+
+	def __init__(self):
+		self.params = {"Message":"課金能力チェック！❤",
+						"form":forms.SurveyForm(),
+						}
+	
+	def get(self, request):
+		return render(request, "Diagnosis_charge.html", context=self.params)
+
+	def post(self, request):
+		if request.method == "POST":
+			self.params["form"] = forms.SurveyForm(request.POST)
+
+			if self.params["form"].is_valid():
+				self.params["Message"] = "ありがとう。"
+		return render(request, "Diagnosis_charge.html", context=self.params)
 
 def get_quiz():
 	test_file = open('web/ques/ques-utf8.csv', encoding="utf-8")

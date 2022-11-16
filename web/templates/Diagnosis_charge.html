@@ -1,0 +1,9 @@
+{% extends 'theme.html' %}
+
+{% block contents %}
+<form action="{% url 'Diagnosis_charge' %}" method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="送信">
+</form>
+{% endblock %}
