@@ -62,16 +62,26 @@ body {
     font-weight: bold;
     letter-spacing: 1.25px;
 }
+
+#sidebar_controll {
+    display: flex;
+}
+
 #sidebarMenu {
-    height: 100%;
-    position: fixed;
+    height: 100vh;
     left: 0;
-    width: 250px;
-    margin-top: 60px;
-    transform: translateX(-250px);
+    width: 0%;
+    opacity: 0;
+    /* margin-top: 60px; */
+    /* transform: translateX(-250px); */
     transition: transform 250ms ease-in-out;
     background: linear-gradient(180deg, #f9e261 0%, #fcfcfc 100%);
 }
+
+#center {
+    width: 100%;
+}
+
 .sidebarMenuInner{
     margin:0;
     padding:0;
@@ -98,8 +108,16 @@ body {
     cursor: pointer;
     text-decoration: none;
 }
-input[type="checkbox"]:checked ~ #sidebarMenu {
-    transform: translateX(0);
+input[type="checkbox"]:checked ~ #sidebar_controll #sidebarMenu {
+    /* transform: translateX(0); */
+    width: 20%;
+    min-width: 250px;
+    opacity: 1;
+}
+
+input[type="checkbox"]:checked ~ #sidebar_controll #center{
+    /* transform: translateX(0); */
+    width: 80%;
 }
 
 input[type=checkbox] {
@@ -180,3 +198,15 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     background: repeating-linear-gradient( -45deg, #ffc107, #ffc107 10px, #ffe9a7 10px, #ffe9a7 50px );
   }
 
+h2 {
+    margin: 50px !important;
+}
+
+.g-slide {
+    margin:50px !important;
+}
+
+.g-slide iframe {
+    width: 65vw;
+    height:36.5vw;
+}

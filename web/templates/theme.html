@@ -21,25 +21,28 @@
         <div class="spinner horizontal"></div>
         <div class="spinner diagonal part-2"></div>
     </label>
-    <div id="sidebarMenu">
-        <ul class="sidebarMenuInner">
-        <li><a href="#contents">Contents</a></li>
-        <li><a href="#simulation">Simulation</a></li>
-        <li><a href="#quiz">Quiz</a></li>
-        <hr>
-        <li><a href="#" style="text-decoration:none;"><a href="{% url 'sns' %}" target="_self">SNSのこと</a></a></li>
-        <li><a href="{% url 'charge' %}" target="_self">課金のこと</a></li>
-        <li><a href="{% url 'fraud' %}" target="_self">詐欺のこと</a></li>
-        <li><a href="{% url 'security' %}" target="_self">セキュリティのこと</a></li>
-        </ul>
-    </div>
 
-    <div id="center" class="main center">
-        <div id="contents"><section>{% block contents %}{% endblock %}</section></div>
-        <div id="simulation"><section>{% block simulation %}{% endblock %}</section></div>
-        <div id="quiz"><section>{% block quiz %}{% endblock %}</section></div>
-        <!-- <div class="mainInner"> -->
+    <div id="sidebar_controll">
+        <div id="sidebarMenu">
+            <ul class="sidebarMenuInner">
+            <li><a href="#contents">Contents</a></li>
+            <li><a href="#simulation">Simulation</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <hr>
+            <li><a href="#" style="text-decoration:none;"><a href="{% url 'sns' %}" target="_self">SNSのこと</a></a></li>
+            <li><a href="{% url 'charge' %}" target="_self">課金のこと</a></li>
+            <li><a href="{% url 'fraud' %}" target="_self">詐欺のこと</a></li>
+            <li><a href="{% url 'security' %}" target="_self">セキュリティのこと</a></li>
+            </ul>
         </div>
+
+        <div id="center" class="main center">
+            <div id="contents"><section>{% block contents %}{% endblock %}</section></div>
+            <div id="simulation"><section>{% block simulation %}{% endblock %}</section></div>
+            <div id="quiz"><section>{% block quiz %}{% endblock %}</section></div>
+            <!-- <div class="mainInner"> -->
+        </div>
+    
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
