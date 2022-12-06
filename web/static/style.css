@@ -65,6 +65,7 @@ body {
 
 #sidebar_controll {
     display: flex;
+    margin-top: 50px;
 }
 
 #sidebarMenu {

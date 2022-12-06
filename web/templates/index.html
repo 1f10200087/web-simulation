@@ -23,21 +23,28 @@
         <div class="spinner horizontal"></div>
         <div class="spinner diagonal part-2"></div>
     </label>
-    <div id="sidebarMenu">
-        <ul class="sidebarMenuInner">
-        <li><a href="{% url 'sns' %}" style="text-decoration:none;"><a href="{% url 'sns' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　SNSのこと</a></a></li>
-        <li><a href="{% url 'charge' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　課金のこと</a></li>
-        <li><a href="{% url 'fraud' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　詐欺のこと</a></li>
-        <li><a href="{% url 'security' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　セキュリティのこと</a></li>
-        </ul>
-    </div>
-    <div id="titleimage">
-    <img src="{% static 'image/黒板2.png' %}" alt="" class="aligncenter"/></div>
-    <div class="button">
-        <a href="{% url 'sns' %}" class="btn btn-malformation">SNSのこと</a>
-        <a href="{% url 'charge' %}" class="btn btn-malformation">高額課金のこと</a>
-        <a href="{% url 'fraud' %}" class="btn btn-malformation">詐欺のこと</a>
-        <a href="{% url 'security' %}" class="btn btn-malformation">セキュリティのこと</a>
+
+    <div id="sidebar_controll">
+
+        <div id="sidebarMenu">
+            <ul class="sidebarMenuInner">
+            <li><a href="{% url 'sns' %}" style="text-decoration:none;"><a href="{% url 'sns' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　SNSのこと</a></a></li>
+            <li><a href="{% url 'charge' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　課金のこと</a></li>
+            <li><a href="{% url 'fraud' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　詐欺のこと</a></li>
+            <li><a href="{% url 'security' %}" target="_self"><i class="fa-sharp fa-solid fa-circle-play"></i>　セキュリティのこと</a></li>
+            </ul>
+        </div>
+
+        <div id="center">
+            <div id="titleimage">
+            <img src="{% static 'image/黒板2.png' %}" alt="" class="aligncenter"/></div>
+            <div class="button">
+                <a href="{% url 'sns' %}" class="btn btn-malformation">SNSのこと</a>
+                <a href="{% url 'charge' %}" class="btn btn-malformation">高額課金のこと</a>
+                <a href="{% url 'fraud' %}" class="btn btn-malformation">詐欺のこと</a>
+                <a href="{% url 'security' %}" class="btn btn-malformation">セキュリティのこと</a>
+            </div>
+        </div>
     </div>
     {% endblock %}
     <hr>
