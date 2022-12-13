@@ -10,12 +10,27 @@ import json
 def index(request):
 	return render(request, 'index.html')
 
+def get_quiz():
+	test_file = open('web/ques/ques-utf8.csv', encoding="utf-8")
+	test_data = csv.reader(test_file)
+	questions = []
+	for row in test_data:
+		if test_data.line_num == 1:
+			continue
+		questions.append(row)
+	test_file.close()
+	
+	count = len(questions)
+	for c in range(count):
+		questions[c][2] = questions[c][2].split()
+	
+	return questions
+
 questions = get_quiz()
 def sns(request):
-	context = {
-        "ques" : questions,
+    context = {
+            "ques" : questions,
     }
-
     if request.method == "POST":
         for i in range(1, 11):
             for j in range(1, 5):
@@ -29,13 +44,12 @@ def sns(request):
                         context = {
                             "ques" : questions,
                         }
-	return render(request, 'sns.html')
+    return render(request, 'sns.html', context)
 
 def charge(request):
-	context = {
+    context = {
         "ques" : questions,
     }
-
     if request.method == "POST":
         for i in range(1, 11):
             for j in range(1, 5):
@@ -49,10 +63,10 @@ def charge(request):
                         context = {
                             "ques" : questions,
                         }
-	return render(request, 'charge.html')
+    return render(request, 'charge.html', context)
 
 def fraud(request):
-	context = {
+    context = {
         "ques" : questions,
     }
 
@@ -69,16 +83,15 @@ def fraud(request):
                         context = {
                             "ques" : questions,
                         }
-	return render(request, 'fraud.html')
+    return render(request, 'fraud.html', context)
 
 def oneclick_fraud(request):
 	return render(request, 'oneclick_fraud.html')
 
 def security(request):
-	context = {
+    context = {
         "ques" : questions,
     }
-
     if request.method == "POST":
         for i in range(1, 11):
             for j in range(1, 5):
@@ -92,7 +105,7 @@ def security(request):
                         context = {
                             "ques" : questions,
                         }
-	return render(request, 'security.html'. context)
+    return render(request, 'security.html', context)
 
 def security_exp(request):
 	return render(request, 'security_exp.html')
