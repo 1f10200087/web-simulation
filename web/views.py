@@ -10,20 +10,89 @@ import json
 def index(request):
 	return render(request, 'index.html')
 
+questions = get_quiz()
 def sns(request):
+	context = {
+        "ques" : questions,
+    }
+
+    if request.method == "POST":
+        for i in range(1, 11):
+            for j in range(1, 5):
+                ids = "answer-"+str(i)+"-"+str(j)
+                if ids in request.POST:
+                    ans = request.POST[ids]
+                    if questions[i-1][3] == ans:
+                        questions[i-1][4] = 1
+                    else: 
+                        questions[i-1][4] = 0
+                        context = {
+                            "ques" : questions,
+                        }
 	return render(request, 'sns.html')
 
 def charge(request):
+	context = {
+        "ques" : questions,
+    }
+
+    if request.method == "POST":
+        for i in range(1, 11):
+            for j in range(1, 5):
+                ids = "answer-"+str(i)+"-"+str(j)
+                if ids in request.POST:
+                    ans = request.POST[ids]
+                    if questions[i-1][3] == ans:
+                        questions[i-1][4] = 1
+                    else: 
+                        questions[i-1][4] = 0
+                        context = {
+                            "ques" : questions,
+                        }
 	return render(request, 'charge.html')
 
 def fraud(request):
+	context = {
+        "ques" : questions,
+    }
+
+    if request.method == "POST":
+        for i in range(1, 11):
+            for j in range(1, 5):
+                ids = "answer-"+str(i)+"-"+str(j)
+                if ids in request.POST:
+                    ans = request.POST[ids]
+                    if questions[i-1][3] == ans:
+                        questions[i-1][4] = 1
+                    else: 
+                        questions[i-1][4] = 0
+                        context = {
+                            "ques" : questions,
+                        }
 	return render(request, 'fraud.html')
 
 def oneclick_fraud(request):
 	return render(request, 'oneclick_fraud.html')
 
 def security(request):
-	return render(request, 'security.html')
+	context = {
+        "ques" : questions,
+    }
+
+    if request.method == "POST":
+        for i in range(1, 11):
+            for j in range(1, 5):
+                ids = "answer-"+str(i)+"-"+str(j)
+                if ids in request.POST:
+                    ans = request.POST[ids]
+                    if questions[i-1][3] == ans:
+                        questions[i-1][4] = 1
+                    else: 
+                        questions[i-1][4] = 0
+                        context = {
+                            "ques" : questions,
+                        }
+	return render(request, 'security.html'. context)
 
 def security_exp(request):
 	return render(request, 'security_exp.html')
@@ -87,7 +156,6 @@ def quiz1(request):
 		print(1)
 	return render(request, 'quiz1.html', context)
 
-questions = get_quiz()
 def quiz2(request):
     context = {
         "ques" : questions,

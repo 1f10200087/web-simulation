@@ -12,7 +12,7 @@
 {% block contents %}
 <h2>contents</h2>
 <div class="g-slide">
-    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ6VnnFAcmFfzIvy_lXFrKGPDMr3xuzS3mDiRcZDmM9cVmR7xE0m3vNMBkUgpp46czRR42UfqvHFq98/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTPmtScxEGqKOM6A-rv0X9knBApjgPwUW2a_KV0jUOZUn_kzv_fAZ_NvnCZcDekEi0hk3Nz-Sq2trJT/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>    
 </div>
 {% endblock %}
 
@@ -28,4 +28,23 @@
 
 {% block quiz %}
 <h2>quiz</h2>
+<div id="comprehension_check">
+    <ol>
+    {% for q in ques %}
+        <div class="questions">
+            <div class="question">
+                <li>{{ q.1 }}</li>
+            </div>
+            <div class="option" onclick="answer_check('{{ q.3 }}', event)">
+                {% for o in q.2 %}
+                <button id="answer-{{ forloop.parentloop.counter }}-{{ forloop.counter }}" value="{{ o }}">
+                    {{ o }}
+                </button>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+    </ol>
+</div>
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}  
