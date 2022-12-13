@@ -2,6 +2,10 @@ window.onload = function alert() {
     window.alert("ご登録ありがとうございます。")
 }
 
+function pay_later() {
+    window.alert("1週間以内にお振り込みがない場合は、ご自宅かお勤め先へご連絡をさせて頂く事となります。トラブルを回避する為、今すぐにお支払い下さい。")
+}
+
 // window.onload = function test() {
 
 //     var countdown = null;

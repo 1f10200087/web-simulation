@@ -65,7 +65,7 @@ body {
 
 #sidebar_controll {
     display: flex;
-    margin-top: 50px;
+    /* margin-left: 10px; */
 }
 
 #sidebarMenu {
@@ -200,7 +200,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   }
 
 h2 {
-    margin: 50px !important;
+    margin-top: 30px !important;
+    margin-left: 50px !important;
 }
 
 .g-slide {
@@ -208,6 +209,6 @@ h2 {
 }
 
 .g-slide iframe {
-    width: 65vw;
-    height:36.5vw;
+    width: 88vw;
+    height:50vw;
 }
