@@ -1,0 +1,22 @@
+.sns_sim {
+    margin : 50px;
+    background-color: #FAF8F1;
+}
+
+.description {
+    white-space: nowrap;
+    text-align : center;
+}
+
+#sns_sim_person {
+    border-radius : 50%;
+}
+
+#sns_sim_sentence {
+    font-family :monospace;
+    font-size : 1.4em;
+}
+
+#sns_sim_image {
+    text-align : center;
+}

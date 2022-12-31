@@ -202,6 +202,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 h2 {
     margin-top: 30px !important;
     margin-left: 50px !important;
+    font-size : 50px !important;
 }
 
 .g-slide {
@@ -211,4 +212,145 @@ h2 {
 .g-slide iframe {
     width: 88vw;
     height:50vw;
+}
+
+img {
+    margin : 50px;
+}
+
+.ques-title {
+    font-size:1.3em;
+}
+
+.correct {
+    color : red;
+    font-size : 3em;
+    margin-left : 10px;
+}
+
+.wrong {
+    color : blue;
+    font-size : 3em;
+    margin-left : 10px;
+}
+
+.cheer {
+    font-size: 2em;
+    margin-left : 20px;
+}
+
+.questions {
+    background : #FFF6C3;
+    margin-bottom : 20px;
+}
+
+.questions > li {
+    font-size : 50px;
+}
+
+.fraud-exp {
+    font-size : 1.7em;
+    margin-left : 80px;
+}
+
+.fraud-exp > a {
+    font-size : 2em;
+}
+
+.security-exp {
+    font-size : 1.7em;
+    margin-left : 80px;
+}
+
+.security-exp > button {
+    margin : 10px;
+}
+
+.charge-exp {
+    font-size : 1.7em;
+    margin-left : 80px;
+}
+
+.charge-exp > button > a {
+    color : white;
+    text-decoration : none;
+}
+
+#output {
+    font-family :monospace;
+    margin: 30px;
+}
+
+#output-header {
+    text-align: center;
+    font-size : 1.4em;
+}
+
+#output-header > h3 {
+    font-size : 2.5em;
+    color : #EB455F;
+}
+
+#output-icon {
+    text-align: center;
+    font-size : 1.4em;
+}
+
+#output-icon > h3 {
+    font-size : 2.5em;
+    color : #EB455F;
+}
+
+#output-name {
+    text-align: center;
+    font-size : 1.4em;
+}
+
+#output-name > h3 {
+    font-size : 2.5em;
+    color : #EB455F;
+}
+
+#output-id {
+    text-align: center;
+    font-size : 1.4em;
+}
+
+#output-id > h3 {
+    font-size : 2.5em;
+    color : #EB455F;
+}
+
+#output-contents {
+    text-align: center;
+    font-size : 1.4em;
+}
+
+#output-contents > h3 {
+    font-size : 2.5em;
+    color : #EB455F;
+}
+
+#output-address {
+    text-align: center;
+    font-size : 1.4em;
+}
+
+#output-address > h3 {
+    font-size : 2.5em;
+    color : #EB455F;
+}
+
+#output-birthday {
+    text-align: center;
+    font-size : 1.4em;
+}
+
+#output-birthday > h3 {
+    font-size : 2.5em;
+    color : #EB455F;
+}
+
+.sns_sim_imagess {
+    text-align: center;
 }

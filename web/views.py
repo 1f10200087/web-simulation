@@ -10,6 +10,7 @@ import json
 def index(request):
 	return render(request, 'index.html')
 
+"""
 def get_quiz():
 	test_file = open('web/ques/ques-utf8.csv', encoding="utf-8")
 	test_data = csv.reader(test_file)
@@ -25,9 +26,26 @@ def get_quiz():
 		questions[c][2] = questions[c][2].split()
 	
 	return questions
+"""
 
-questions = get_quiz()
+def get_quiz(thema):
+    path = 'web/ques/' + thema + '_quiz.csv'
+    test_file = open(path, encoding="utf-8")
+    test_data = csv.reader(test_file)
+    questions = []
+    for row in test_data:
+        if test_data.line_num == 1:
+            continue
+        questions.append(row)
+    test_file.close()
+    count = len(questions)
+    for c in range(count):
+        questions[c][2] = questions[c][2].split()
+    return questions
+
+#questions = get_quiz()
 def sns(request):
+    questions = get_quiz("sns")
     context = {
             "ques" : questions,
     }
@@ -47,6 +65,7 @@ def sns(request):
     return render(request, 'sns.html', context)
 
 def charge(request):
+    questions = get_quiz("charge")
     context = {
         "ques" : questions,
     }
@@ -66,6 +85,7 @@ def charge(request):
     return render(request, 'charge.html', context)
 
 def fraud(request):
+    questions = get_quiz("fraud")
     context = {
         "ques" : questions,
     }
@@ -89,6 +109,7 @@ def oneclick_fraud(request):
 	return render(request, 'oneclick_fraud.html')
 
 def security(request):
+    questions = get_quiz("security")
     context = {
         "ques" : questions,
     }
@@ -129,37 +150,29 @@ def Diagnosis_charge(request):
 			answs[3] = request.POST['ques4']
 			answs[4] = request.POST['ques5']
 			result = calc_DegreeCharge(answs)
-		print(answs, result)
+		#print(answs, result)
 		context = {
 			'form' : form,
-			'result' : str(result)
+			'result' : result[0],
+            'advice' : result[1]
 		}
 	return render(request, 'Diagnosis_charge.html', context)
 
 def calc_DegreeCharge(lst):
-	res = 0
-	for a in lst:
-		if a == "1":
-			res += 1
-	return res / 5 * 100
+    if lst[0] == '2':
+        return ["かなり低い", "キミは課金能力がないか、課金に興味がないみたい\nもし課金することがあれば親とお小遣いに相談して決めよう！"]
+    else:
+        if lst[1] == '2':
+            return ["かなり低い", "キミは課金することに興味がないみたい\n自制ができるキミにアドバイスはいらないよね？"]
+        else:
+            if lst[2] == '1' and lst[3] == '2' and lst[4] == '2':
+                return ["中", "キミの課金能力は高いみたい\nだけど、自分のお小遣いの中で課金しててえらい！\n我慢出来ずにキミの親に内緒で課金しないように気を付けてね！"]
+            elif lst[3] == '1' and lst[4] == '2':
+                return ["高い", "キミは課金する時に親に相談出来てえらい！\nだけど、我慢できずに親に内緒で課金しないように気を付けてね！"]
+            else:
+                return ["かなり高い", "キミの課金能力はかなり高いみたい\nだけど親に内緒で課金してはだめだよ？\nたくさん課金して楽しい瞬間はそのときだけ。あとで後悔してもお金は返ってこないよ！\nキミが高額課金していないことを信じてる！"]
 
-
-def get_quiz():
-	test_file = open('web/ques/ques-utf8.csv', encoding="utf-8")
-	test_data = csv.reader(test_file)
-	questions = []
-	for row in test_data:
-		if test_data.line_num == 1:
-			continue
-		questions.append(row)
-	test_file.close()
-	
-	count = len(questions)
-	for c in range(count):
-		questions[c][2] = questions[c][2].split()
-	
-	return questions
-
+"""
 def quiz1(request):
 	questions = get_quiz()
 	context = {
@@ -187,3 +200,4 @@ def quiz2(request):
                             "ques" : questions,
                         }
     return render(request, 'quiz2.html', context)
+"""

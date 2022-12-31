@@ -29,9 +29,9 @@ urlpatterns = [
     path('web/fraud/oneclick_fraud', web_views.oneclick_fraud, name="oneclick_fraud"),
     path('web/security', web_views.security, name="security"),
     path('web/security/security_exp', web_views.security_exp, name="security_exp"),
-    path('quiz1', web_views.quiz1, name="quiz1"),
-    path('quiz2', web_views.quiz2, name="quiz2"),
-    path('test', web_views.test, name="test"),
+    #path('quiz1', web_views.quiz1, name="quiz1"),
+    #path('quiz2', web_views.quiz2, name="quiz2"),
+    #path('test', web_views.test, name="test"),
 ]
 
 if settings.DEBUG:

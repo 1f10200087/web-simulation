@@ -1,0 +1,51 @@
+.diagnosis {
+    margin : 80px;
+    text-align: center;
+}
+
+#diagnosis-title {
+    margin-bottom : 25px;
+}
+
+.label_name {
+    font-size : 2em;
+}
+
+.radios {
+    display: inline-block;
+    background-color: aqua;
+}
+
+.diagnosis-select {
+    font-size: 2em;
+
+}
+
+#diagnosis-res {
+    font-size: 2.5em;
+}
+
+#diagnosis-advice {
+    font-size: 1.8em;
+}
+
+#diagnosis-submit {
+    background-color: #495579;
+    font-size: 30px;
+    color : white;
+    border-radius: 5px;
+    border-bottom: solid 3px goldenrod;
+    box-shadow: 3px 3px 3px gray;
+    transition: 0.3s;
+    width : 200px;
+}
+
+#diagnosis-submit:active {
+    transform: translateY(2px);
+    border-bottom: none;
+}
+
+#diagnosis-submit:hover {
+    color : black;
+    background-color: orange;
+}

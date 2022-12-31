@@ -18,27 +18,268 @@
 
 {% block simulation %}
 <h2>simulation</h2>
-<a href="{% url 'Diagnosis_charge' %}">診断するよー</a>
+<div class="charge-exp">
+    <p>
+        ここをクリックするとキミが課金についてどのくらい知っているか診断できるよ！<br>
+        (お子さんが課金についてどのくらい知っているか、高額課金する可能性があるか気になる親御さんはこそっとやらせてみて！)
+    </p>
+    <button class="btn btn-danger btn-lg"><a href="{% url 'Diagnosis_charge' %}">診断</a></button>
+</div>
 {% endblock %}
 
 {% block quiz %}
 <h2>quiz</h2>
 <div id="comprehension_check">
     <ol>
-    {% for q in ques %}
         <div class="questions">
             <div class="question">
-                <li>{{ q.1 }}</li>
+                <li class="ques-title"> {{ ques.0.1 }}</li>
             </div>
-            <div class="option" onclick="answer_check('{{ q.3 }}', event)">
-                {% for o in q.2 %}
-                <button id="answer-{{ forloop.parentloop.counter }}-{{ forloop.counter }}" value="{{ o }}">
-                    {{ o }}
-                </button>
+            <div class="option" onclick="answer_check('{{ ques.0.3 }}', event, '{{ ques.0.0}}')">
+                {% for o in ques.0.2 %}
+                <div class="choices">
+                    <button class="btn btn-success" value="{{ o }}">
+                        {{ o }}
+                    </button>
+                </div>
                 {% endfor %}
             </div>
+            <div class="answer_display">
+                <div id="correct-{{ ques.0.0 }}" style="display:none;">
+                    <h3 class="correct">正解！</h3>
+                    <p class="cheer">この調子で他の問題も正解しよう！</p>
+                </div>
+                <div id="wrong-{{ ques.0.0 }}" style="display:none;">
+                    <h3 class="wrong">不正解...</h3>
+                    <p class="cheer">スライドを見てもう一回考えてみよう！</p>
+                </div>
+            </div>
         </div>
-    {% endfor %}
+
+        <div class="questions">
+            <div class="question">
+                <li class="ques-title"> {{ ques.1.1 }}</li>
+            </div>
+            <div class="option" onclick="answer_check('{{ ques.1.3 }}', event, '{{ ques.1.0}}')">
+                {% for o in ques.1.2 %}
+                <div class="choices">
+                    <button class="btn btn-success" value="{{ o }}">
+                        {{ o }}
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="answer_display">
+                <div id="correct-{{ ques.1.0 }}" style="display:none;">
+                    <h3 class="correct">正解！</h3>
+                    <p class="cheer">この調子で他の問題も正解しよう！</p>
+                </div>
+                <div id="wrong-{{ ques.1.0 }}" style="display:none;">
+                    <h3 class="wrong">不正解...</h3>
+                    <p class="cheer">スライドを見てもう一回考えてみよう！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="questions">
+            <div class="question">
+                <li class="ques-title"> {{ ques.2.1 }}</li>
+            </div>
+            <div class="option" onclick="answer_check('{{ ques.2.3 }}', event, '{{ ques.2.0}}')">
+                {% for o in ques.2.2 %}
+                <div class="choices">
+                    <button class="btn btn-success" value="{{ o }}">
+                        {{ o }}
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="answer_display">
+                <div id="correct-{{ ques.2.0 }}" style="display:none;">
+                    <h3 class="correct">正解！</h3>
+                    <p class="cheer">この調子で他の問題も正解しよう！</p>
+                </div>
+                <div id="wrong-{{ ques.2.0 }}" style="display:none;">
+                    <h3 class="wrong">不正解...</h3>
+                    <p class="cheer">スライドを見てもう一回考えてみよう！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="questions">
+            <div class="question">
+                <li class="ques-title"> {{ ques.3.1 }}</li>
+            </div>
+            <div class="option" onclick="answer_check('{{ ques.3.3 }}', event, '{{ ques.3.0}}')">
+                {% for o in ques.3.2 %}
+                <div class="choices">
+                    <button class="btn btn-success" value="{{ o }}">
+                        {{ o }}
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="answer_display">
+                <div id="correct-{{ ques.3.0 }}" style="display:none;">
+                    <h3 class="correct">正解！</h3>
+                    <p class="cheer">この調子で他の問題も正解しよう！</p>
+                </div>
+                <div id="wrong-{{ ques.3.0 }}" style="display:none;">
+                    <h3 class="wrong">不正解...</h3>
+                    <p class="cheer">スライドを見てもう一回考えてみよう！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="questions">
+            <div class="question">
+                <li class="ques-title"> {{ ques.4.1 }}</li>
+            </div>
+            <div class="option" onclick="answer_check('{{ ques.4.3 }}', event, '{{ ques.4.0}}')">
+                {% for o in ques.4.2 %}
+                <div class="choices">
+                    <button class="btn btn-success" value="{{ o }}">
+                        {{ o }}
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="answer_display">
+                <div id="correct-{{ ques.4.0 }}" style="display:none;">
+                    <h3 class="correct">正解！</h3>
+                    <p class="cheer">この調子で他の問題も正解しよう！</p>
+                </div>
+                <div id="wrong-{{ ques.4.0 }}" style="display:none;">
+                    <h3 class="wrong">不正解...</h3>
+                    <p class="cheer">スライドを見てもう一回考えてみよう！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="questions">
+            <div class="question">
+                <li class="ques-title"> {{ ques.5.1 }}</li>
+            </div>
+            <div class="option" onclick="answer_check('{{ ques.5.3 }}', event, '{{ ques.5.0}}')">
+                {% for o in ques.5.2 %}
+                <div class="choices">
+                    <button class="btn btn-success" value="{{ o }}">
+                        {{ o }}
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="answer_display">
+                <div id="correct-{{ ques.5.0 }}" style="display:none;">
+                    <h3 class="correct">正解！</h3>
+                    <p class="cheer">この調子で他の問題も正解しよう！</p>
+                </div>
+                <div id="wrong-{{ ques.5.0 }}" style="display:none;">
+                    <h3 class="wrong">不正解...</h3>
+                    <p class="cheer">スライドを見てもう一回考えてみよう！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="questions">
+            <div class="question">
+                <li class="ques-title"> {{ ques.6.1 }}</li>
+            </div>
+            <div class="option" onclick="answer_check('{{ ques.6.3 }}', event, '{{ ques.6.0}}')">
+                {% for o in ques.6.2 %}
+                <div class="choices">
+                    <button class="btn btn-success" value="{{ o }}">
+                        {{ o }}
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="answer_display">
+                <div id="correct-{{ ques.6.0 }}" style="display:none;">
+                    <h3 class="correct">正解！</h3>
+                    <p class="cheer">この調子で他の問題も正解しよう！</p>
+                </div>
+                <div id="wrong-{{ ques.6.0 }}" style="display:none;">
+                    <h3 class="wrong">不正解...</h3>
+                    <p class="cheer">スライドを見てもう一回考えてみよう！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="questions">
+            <div class="question">
+                <li class="ques-title"> {{ ques.7.1 }}</li>
+            </div>
+            <div class="option" onclick="answer_check('{{ ques.7.3 }}', event, '{{ ques.7.0}}')">
+                {% for o in ques.7.2 %}
+                <div class="choices">
+                    <button class="btn btn-success" value="{{ o }}">
+                        {{ o }}
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="answer_display">
+                <div id="correct-{{ ques.7.0 }}" style="display:none;">
+                    <h3 class="correct">正解！</h3>
+                    <p class="cheer">この調子で他の問題も正解しよう！</p>
+                </div>
+                <div id="wrong-{{ ques.7.0 }}" style="display:none;">
+                    <h3 class="wrong">不正解...</h3>
+                    <p class="cheer">スライドを見てもう一回考えてみよう！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="questions">
+            <div class="question">
+                <li class="ques-title"> {{ ques.8.1 }}</li>
+            </div>
+            <div class="option-{{ ques.8.0 }}" onclick="answer_check('{{ ques.8.3 }}', event, '{{ ques.8.0}}')">
+                {% for o in ques.8.2 %}
+                <div class="choices">
+                    <button class="btn btn-success" value="{{ o }}">
+                        {{ o }}
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="answer_display">
+                <div id="correct-{{ ques.8.0 }}" style="display:none;">
+                    <h3 class="correct">正解！</h3>
+                    <p class="cheer">この調子で他の問題も正解しよう！</p>
+                </div>
+                <div id="wrong-{{ ques.8.0 }}" style="display:none;">
+                    <h3 class="wrong">不正解...</h3>
+                    <p class="cheer">スライドを見てもう一回考えてみよう！</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="questions">
+            <div class="question">
+                <li class="ques-title"> {{ ques.9.1 }}</li>
+            </div>
+            <div class="option" onclick="answer_check('{{ ques.9.3 }}', event, '{{ ques.9.0}}')">
+                {% for o in ques.9.2 %}
+                <div class="choices">
+                    <button class="btn btn-success" value="{{ o }}">
+                        {{ o }}
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="answer_display">
+                <div id="correct-{{ ques.9.0 }}" style="display:none;">
+                    <h3 class="correct">正解！</h3>
+                    <p class="cheer">この調子で他の問題も正解しよう！</p>
+                </div>
+                <div id="wrong-{{ ques.9.0 }}" style="display:none;">
+                    <h3 class="wrong">不正解...</h3>
+                    <p class="cheer">スライドを見てもう一回考えてみよう！</p>
+                </div>
+            </div>
+        </div>
     </ol>
 </div>
 <script src="{% static 'js/script.js' %}"></script>

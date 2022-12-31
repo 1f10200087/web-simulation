@@ -1,14 +1,64 @@
 {% extends 'theme.html' %}
 
-{% block contents %}
-<form action="{% url 'Diagnosis_charge' %}" method="POST">
-    {{ form.as_p }}
-    {% csrf_token %}
-    <input type="submit" value="送信">
-</form>
-<h3>実行結果</h3>
-<p>あなたの高額課金する可能性は <b>{{ result }}%</b> です！</p>
+{% load static %}
 
-<h3>test</h3>
-<p>{{ test }}</p>
+{% block css %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+<link rel="stylesheet" href="{% static 'css/diagnosis.css' %}">
+{% endblock %}
+
+{% block contents %}
+<div class="diagnosis">
+    <h2 id="diagnosis-title">課金能力診断</h2>
+    <form action="{% url 'Diagnosis_charge' %}" method="POST">
+        {% csrf_token %}
+        <p class="label_name">{{ form.ques1.label_tag }}</p>
+        <div class="diagnosis-select">
+            {% for choice in form.ques1 %}
+            {{ choice }}
+            {% endfor %}
+        </div>
+        <hr>
+        <p class="label_name">{{ form.ques2.label_tag }}</p>
+        <div class="diagnosis-select">
+            {% for choice in form.ques2 %}
+            {{ choice }}
+            {% endfor %}
+        </div>
+        <hr>
+        <p class="label_name">{{ form.ques3.label_tag }}</p>
+        <div class="diagnosis-select">
+            {% for choice in form.ques3 %}
+            {{ choice }}
+            {% endfor %}
+        </div>
+        <hr>
+
+        <p class="label_name">{{ form.ques4.label_tag }}</p>
+        <div class="diagnosis-select">
+            {% for choice in form.ques4 %}
+            {{ choice }}
+            {% endfor %}
+        </div>
+        <hr>
+
+        <p class="label_name">{{ form.ques5.label_tag }}</p>
+        <div class="diagnosis-select">
+            {% for choice in form.ques5 %}
+            {{ choice }}
+            {% endfor %}
+        </div>
+        <hr>
+
+        <input type="submit" id="diagnosis-submit" value="送信">
+    </form>
+    <div class="diagnosis-result">
+        <h2>実行結果</h2>
+        <p id="diagnosis-res">
+            キミが高額課金する危険度は <b>{{ result }}</b> です!
+        </p>
+        <p id="diagnosis-advice">{{ advice | linebreaksbr }}</p>
+    </div>
+</div>
 {% endblock %}
