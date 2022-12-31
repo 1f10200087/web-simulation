@@ -5,39 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>セキュリティ疑似体験ページ</title>
-    <link rel="stylesheet" href="{% static 'secex.css' %}">
+    <link rel="stylesheet" href="{% static 'ransam.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
 </head>
-<body style="background-color:red;">
-    <h2>ランサムウェア</h2>
-    <div class="timer">
-        <p class="time"><span id="min"></span> :</p>
-        <p class="time"><span id="sec"></span> :</p>
-        <p class="time"><span id="miri"></span> :</p>
+<body style="background-color:rgb(164, 0, 0);;" >
+    <div class="around">
+        <h1>ランサムウェア</h1>
+        <img src="{% static 'image/rock_image.png' %}" alt="" id="rock"/>
+        <div class="message">
+            <p>１０分後にあなたの大切なファイル(写真など)がすべて破棄されます。<br></p>
+            <p>時間内に振り込んでください。<br></p>
+                <div class="timer">
+                    <span id="min"></span> :
+                    <span id="sec"></span> :
+                    <span id="miri"></span>
+                </div>
+        </div>
     </div>
-
-    <p id="timer"></p>
-
-    <p>１０分後にあなたの大切なファイル(写真など)がすべて破棄されます。<br></p>
-    <p>時間内に振り込んでください。<br>
-        <h3>何が起きたの？</h3>
-        <p>重要なファイルは暗号化されています<br>
-           文書、写真、ビデオ、データベース、およびその他のファイルの多くは、暗号化されているためアクセス出来なくなりました。<br>
-           ファイルを回復する方法を探していますが、時間がありません。<br>
-           また、誰も私たちの解読サービス無しではあなたのファイルを回復することができません。 
-        </p>
-        <h3>どうすればいいの？
-        </h3>
-        <p>
-            あなたのファイルを安全かつ簡単に回復することができます。<br>
-            もし、あなたがファイルを解読させたいなら、時間内にお金を払わなければいけません。<br>
-            また、時間内に支払いがなければ、永遠にあなたのファイルが回復することが出来ません。
-        </p>
-        <h3>どうやって払うの？</h3>
-        <p>電子マネーで支払う。
-        <p>Bit Coin : <input type="text" name="money">＄</p>    
-        <button type="submit" name="pay">支払う</button>
-    </p>
+        <p id="title"><b>Ooops, your files have been encrypted!</b></p>
+        <div id="maintext">
+            <h3>何が起きたの？</h3>
+            <p>重要なファイルは暗号化されています<br>
+            文書、写真、ビデオ、データベース、およびその他のファイルの多くは、暗号化されているためアクセス出来なくなりました。<br>
+            ファイルを回復する方法を探していますが、時間がありません。<br>
+            また、誰も私たちの解読サービス無しではあなたのファイルを回復することができません。 
+            </p>
+            <h3>どうすればいいの？
+            </h3>
+            <p>
+                あなたのファイルを安全かつ簡単に回復することができます。<br>
+                もし、あなたがファイルを解読させたいなら、時間内にお金を払わなければいけません。<br>
+                また、時間内に支払いがなければ、永遠にあなたのファイルが回復することが出来ません。
+            </p>
+            <h3>どうやって払うの？</h3>
+        </div>
+        <div class = "around">
+            <div id="pay">
+            <p>電子マネーで支払う。</p>
+            <p>Bit Coin : <input type="text" name="money">＄</p>    
+            <button type="submit" name="pay">支払う</button>
+            </div>
+        </div>
     <script>
 
         const min = document.getElementById("min");

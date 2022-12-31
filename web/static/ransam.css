@@ -1,0 +1,53 @@
+body{
+    background-color: brown;
+}
+
+h1{
+    font-family: "HGP行書体";
+    margin-left: 35%;
+}
+
+
+#maintext{
+    background-color: white;
+    font-family: "HGP行書体";
+    width: 60%;
+    margin: 0 0 0 auto;
+    font-size: 130%;
+}
+
+.around{
+    color: white;
+    float: left;
+
+}
+
+#rock{
+    width: 50%;
+    height: auto;
+    margin-left: 38%;
+    margin-top: 15%;
+}
+
+.timer{
+    font-size: 350%;
+    color: white;
+    margin-left: 20%;
+
+}
+.message{
+    margin-left: 10%;
+    width: 120%;
+    margin-top: 4%;
+    border-color: blue !important;
+}
+
+#title{
+    margin-left: 50%;
+    font-size: 180%;
+    color: white;
+}
+#pay{
+    margin-left: 60%;
+    width: 120%;
+}
