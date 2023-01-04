@@ -88,6 +88,8 @@ body {
     margin:0;
     padding:0;
     border-top: 1px solid rgba(255, 255, 255, 0.10);
+    position: sticky;
+    top: 50px;
 }
 .sidebarMenuInner li{
     list-style: none;
