@@ -14,7 +14,9 @@
 <body>
     <div class="bg_pattern Diagonal_v2"></div>
     {% block header %}
-    <div class="header"></div>
+    <div class="header">
+        <a href="{% url 'index' %}"><img class="img_school" src="{% static 'image/ロゴ.png' %}"/></a>
+    </div>
     {% endblock %}
     {% block sidebar %}
     <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">

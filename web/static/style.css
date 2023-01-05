@@ -63,18 +63,29 @@ body {
     letter-spacing: 1.25px;
 }
 
+.img_school {
+    padding: 0;
+    margin: 0;
+    height: 90%;
+    margin-left: 50px;
+}
+
 #sidebar_controll {
     display: flex;
+    /* overflow-y: hidden;
+    height: auto; */
     /* margin-left: 10px; */
 }
 
 #sidebarMenu {
     /* height: 100vh; */
     float:left;
+    min-height: 100vh;
     left: 0;
     width: 0%;
     opacity: 0;
     margin-top: 60px;
+    /* padding-bottom: 10000px; */
     /* transform: translateX(-250px); */
     transition: transform 250ms ease-in-out;
     background: linear-gradient(180deg, #f9e261 0%, #fcfcfc 100%);
